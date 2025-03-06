@@ -51,11 +51,13 @@
     <artifactId>selenium-devtools-v133</artifactId>
     <version>4.9.1</version>
     </dependency>
-    <dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-chrome-driver</artifactId>
-        <version>4.9.1</version> <!-- Ensure it matches with Selenium version -->
-    </dependency>
+   <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools-v133 -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-devtools-v133</artifactId>
+    <version>4.29.0</version>
+</dependency>
+
     <dependency> 
         <groupId>junit</groupId> 
         <artifactId>junit</artifactId> 
