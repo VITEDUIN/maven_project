@@ -51,7 +51,11 @@
     <artifactId>selenium-devtools-v133</artifactId>
     <version>4.9.1</version>
     </dependency>
-
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-chrome-driver</artifactId>
+        <version>4.9.1</version> <!-- Ensure it matches with Selenium version -->
+    </dependency>
     <dependency> 
         <groupId>junit</groupId> 
         <artifactId>junit</artifactId> 
