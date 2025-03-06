@@ -13,32 +13,25 @@ public class AppTest {
         // Set Chrome options
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-debugging-port=9222"); // Enable DevTools via remote debugging
+ // Initialize the WebDriver
+WebDriver driver = new ChromeDriver(options);
+var chromeDriver = new ChromeDriver();
 
-        // Initialize the WebDriver
-        WebDriver driver = new ChromeDriver(options);
-            var chromeDriver = new ChromeDriver();
-            
-            ​ var chromeDevTools = chromeDriver.getDevTools();
-            ​ /​/​Session of ChromeDevTool
-            ​ chromeDevTools.createSession();
-            ​
-            ​ /​/​Enable Network offline
-            ​ enableNetworkOffline(chromeDevTools);
-            
-             /​/​Enable Network Online
-            ​ enableNetworkOnline(chromeDevTools);
-            ​
-            ​ /​/​Network Interception
-            ​ interceptNetwork(chromeDevTools);
-            ​
-            ​ /​/​Inspect Detached network
-             inspectDetached(chromeDevTools);
-            
-             /​/​Console Log
-            ​ String message = "From ExecuteAutomation";
-            ​ consoleLogs(chromeDevTools, message);
-            chromeDriver.executeScript("console.log('" + message + "');");
-        
+var chromeDevTools = chromeDriver.getDevTools();
+/​/​Session of ChromeDevTool
+chromeDevTools.createSession();
+/​/​Enable Network offline
+enableNetworkOffline(chromeDevTools);
+ /​/​Enable Network Online
+enableNetworkOnline(chromeDevTools);
+  /​/​Network Interception
+interceptNetwork(chromeDevTools);
+/​/​Inspect Detached network
+inspectDetached(chromeDevTools);
+/​/​Console Log
+String message = "From ExecuteAutomation";
+consoleLogs(chromeDevTools, message);
+chromeDriver.executeScript("console.log('" + message + "');");
         // Get the DevTools instance
     //    DevTools devTools = ((ChromeDriver) driver).getDevTools();
 
