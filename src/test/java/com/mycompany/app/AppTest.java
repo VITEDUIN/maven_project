@@ -16,22 +16,44 @@ public class AppTest {
 
         // Initialize the WebDriver
         WebDriver driver = new ChromeDriver(options);
-
+            var chromeDriver = new ChromeDriver();
+            
+            ​ var chromeDevTools = chromeDriver.getDevTools();
+            ​ /​/​Session of ChromeDevTool
+            ​ chromeDevTools.createSession();
+            ​
+            ​ /​/​Enable Network offline
+            ​ enableNetworkOffline(chromeDevTools);
+            
+             /​/​Enable Network Online
+            ​ enableNetworkOnline(chromeDevTools);
+            ​
+            ​ /​/​Network Interception
+            ​ interceptNetwork(chromeDevTools);
+            ​
+            ​ /​/​Inspect Detached network
+             inspectDetached(chromeDevTools);
+            
+             /​/​Console Log
+            ​ String message = "From ExecuteAutomation";
+            ​ consoleLogs(chromeDevTools, message);
+            chromeDriver.executeScript("console.log('" + message + "');");
+        
         // Get the DevTools instance
-        DevTools devTools = ((ChromeDriver) driver).getDevTools();
+    //    DevTools devTools = ((ChromeDriver) driver).getDevTools();
 
         // Create a DevTools session and enable the necessary protocols
-        devTools.createSession();
+     //   devTools.createSession();
 
         // Enable the Browser domain (which corresponds to the 'browser' protocol)
-        devTools.send(Browser.enable());
+     //   devTools.send(Browser.enable());
 
         // Example: Open a website
-        driver.get("https://www.google.com");
-
+     //   driver.get("https://www.google.com");
+        chromeDriver.get("https:/​/​amazon.in");
         // Your test logic here...
 
         // Close the browser
-        driver.quit();
+     //   driver.quit();
     }
 }
